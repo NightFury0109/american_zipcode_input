@@ -11,7 +11,7 @@ const ZipcodeInput: React.FC = () => {
 
     if (isNumber) setZipcode(e.target.value);
 
-    if (value === "" || zipcode === "" && value !== "" && !isNumber) {
+    if (value === "" || (zipcode === "" && value !== "" && !isNumber)) {
       setErrorMsg("");
     } else {
       if (isValid) setErrorMsg("");
