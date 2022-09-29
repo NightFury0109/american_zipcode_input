@@ -23,8 +23,12 @@ const ZipcodeInput: React.FC = () => {
     const n: number = 1e7;
     let currentValue: string = zipcode;
 
-    for (let i: number = zipcode.length; i < 5; i++) {
-      currentValue += Math.floor((Math.random() * n % 10));
+    if (zipcode.length > 5) {
+      currentValue = currentValue.substr(0, 5);
+    } else {
+      for (let i: number = zipcode.length; i < 5; i++) {
+        currentValue += Math.floor((Math.random() * n % 10));
+      }
     }
 
     setZipcode(currentValue);
